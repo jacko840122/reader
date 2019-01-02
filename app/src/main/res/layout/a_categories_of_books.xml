@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ItemInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/categories_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textColor="#ff333333"
+        android:textSize="38px" />
+
+    <Button
+        android:id="@+id/show_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/categories_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:text="显示全部  >"
+        android:textColor="#ff909090"
+        android:textSize="30px" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/books_hor_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/show_all"
+        android:layout_marginTop="19dp"
+        android:divider="#ffff0000"
+        android:dividerHeight="10dp" >
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

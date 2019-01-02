@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/GeneralListItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical" 
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/book_cover2"
+        android:layout_width="140dp"
+        android:layout_height="210dp"
+        android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/book_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ff333333"
+            android:textSize="36px" />
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff707070"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/book_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff707070"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/download_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff707070"
+            android:textSize="30px" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/comment_ratingBar"
+                style="@style/OrangeRatingBar_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true" />
+
+            <TextView
+                android:id="@+id/comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/download_or_read_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:id="@+id/downloading_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible" >
+
+                <ProgressBar
+                    android:id="@+id/Download_progressBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="116dp"
+                    android:layout_height="37dp"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/download_progress" />
+
+                <TextView
+                    android:id="@+id/Download_progress_Text"
+                    android:layout_width="116dp"
+                    android:layout_height="37dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="#ff00e000"
+                    android:textSize="35px" />
+            </FrameLayout>
+            
+            <ImageButton 
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/downdelete_btn"
+                android:id="@+id/btn_del"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

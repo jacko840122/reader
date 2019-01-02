@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/read_bg_5" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/toolbar"
+        android:orientation="vertical" >
+
+        <include layout="@layout/header_filtered_view" />
+
+        <include layout="@layout/search_simple" />
+
+        <LinearLayout
+            android:id="@+id/no_books_tip_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/no_books_tip"
+                android:layout_width="166dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/no_books_bg"
+                android:gravity="center"
+                android:text="您还没有书籍"
+                android:textColor="#ffffffff"
+                android:textSize="32px" />
+
+            <TextView
+                android:id="@id/items"
+                style="@style/ItemSubtitle"
+                android:layout_marginRight="10dip"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:singleLine="true"
+                android:textColor="#ff00dd88"
+                android:textSize="36px" />
+
+            <ImageButton
+                android:id="@+id/bt_go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:src="@drawable/bt_go_default" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/content_container"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1.0"
+            android:background="#ffeeeeee"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/operation_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/toolbarHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/toolbar_background"
+        android:gravity="center"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip"
+        android:visibility="gone" >        
+
+        <Button
+            android:id="@id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/toolbar_button_selector"
+            android:drawableTop="@drawable/toolbar_delete"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/delete"
+            android:textColor="@android:color/white"
+            android:textSize="12.0dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/toolbarHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/toolbar_background"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip"
+        android:visibility="gone" >
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@id/view_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/toolbar_button_selector"
+                    android:drawableTop="@drawable/toolbar_view"
+                    android:onClick="onClick"
+                    android:text="@string/views"
+                    android:textColor="@android:color/white"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/toolbar_button_selector"
+                    android:drawableTop="@drawable/toolbar_search"
+                    android:onClick="onClick"
+                    android:text="@string/search"
+                    android:textColor="@android:color/white"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/library_synchronize_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/toolbar_button_selector"
+                    android:drawableTop="@drawable/toolbar_synchronize"
+                    android:onClick="onClick"
+                    android:text="@string/import_files"
+                    android:textColor="@android:color/white"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0" />
+
+                <Button
+                    android:id="@id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/toolbar_button_selector"
+                    android:drawableTop="@drawable/toolbar_settings"
+                    android:onClick="onClick"
+                    android:text="@string/settings"
+                    android:textColor="@android:color/white"
+                    android:textSize="12.0dip" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <ImageSwitcher
+        android:id="@id/info_image_switcher"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@id/splash_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:orientation="vertical" />
+
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Header"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:background="#ff00dd88"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/back_btn3"
+            style="@style/SortHeader"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/back_button"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="取消"
+            android:textColor="#ffffffff"
+            android:textSize="42px"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="撰写评论"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_button2"
+            android:paddingBottom="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:text="发送"
+            android:textColor="#ffffffff"
+            android:textSize="42px" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <RatingBar
+            style="@style/OrangeRatingBar_large"
+            android:id="@+id/commet_ratingBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请按星形来评分"
+            android:textColor="#ff949494"
+            android:textSize="30px" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/input_comment"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:gravity="left|top"
+        android:hint="觉得怎么样，说点什么吧！"
+        android:inputType="textMultiLine"
+        android:textColor="#ff949494"
+        android:textColorHint="#ff999999"
+        android:textSize="30px" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

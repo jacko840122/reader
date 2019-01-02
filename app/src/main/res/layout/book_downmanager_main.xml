@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ItemInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        style="@style/Header"
+        android:layout_marginTop="25dp"
+        android:background="#ff00dd88" >
+
+        <Button
+            android:id="@+id/back_btn"
+            style="@style/SortHeader"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/back_button"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="返回"
+            android:textColor="#ffffffff"
+            android:textSize="42px"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"            
+            android:text="下载管理"
+            android:textColor="#ffffffff"
+            android:textSize="42px" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp" >
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bookdelete_btn" />
+
+            <ImageView
+                android:id="@+id/btn_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finishdelete_btn" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:listSelector="@android:color/transparent"  />
+
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff00dd88"
+    	android:layout_marginTop="25dp"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@id/back_btn"
+            style="@style/SortHeader"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/back_button"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="取消"
+            android:textColor="#ffffffff"
+            android:textSize="42px"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/search_input_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_input_bg"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="输入关键字搜索"
+                android:textColor="#ff414141"
+                android:textColorHint="#ffa5a4a4"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/bt_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/delete_icon"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_btn"
+            style="@style/PanelButton"
+            android:drawableLeft="@drawable/toolbar_search"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@android:color/transparent" >
+
+        <GridView
+            android:id="@+id/GridView_Search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:horizontalSpacing="50dp"
+            android:numColumns="2"
+            android:paddingLeft="60dp"
+            android:paddingTop="51dp"
+            android:verticalSpacing="60dp" >
+        </GridView>
+
+        <LinearLayout
+            android:id="@+id/no_search_tip"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffeeeeee"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="134dp"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/no_search_tip_1"
+                    android:textColor="#ff585858"
+                    android:textSize="48px" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/no_search_tip_2"
+                    android:textColor="#ff585858"
+                    android:textSize="42px" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

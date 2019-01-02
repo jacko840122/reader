@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion ANDROID_COMPILE_SDK_VERSION
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.greenlemonmobile.app.ebook"
+        minSdkVersion ANDROID_MIN_SDK
+        targetSdkVersion ANDROID_TARGET_SDK_VERSION
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+    }
+
+}
+
+dependencies {
+    compile "com.android.support:support-v4:$ANDROID_LIB_VERSION"
+    compile "com.android.support:recyclerview-v7:$ANDROID_LIB_VERSION"
+    implementation "com.android.support:appcompat-v7:$ANDROID_LIB_VERSION"
+    compile files('libs/download.jar')
+    compile files('libs/GoogleAdMobAdsSdk-6.2.1.jar')
+    compile files('libs/statusclasses.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/user-center.jar')
+    implementation project(':folioreader')
+    implementation project(':hwtxtreaderlib')
+    implementation project(':pdf')
+    //implementation "com.folioreader:folioreader:0.5.1"
+}
